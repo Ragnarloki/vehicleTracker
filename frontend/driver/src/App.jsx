@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import io from "socket.io-client";
-
-const socket = io("http://localhost:5000");
+const apiUrl = import.meta.env.VITE_API_URL;
+const socket = io(apiUrl);
 
 function App() {
   useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
     }
   }, []);
 
-  return <h2>Driver Location Tracker Running...</h2>;
+  return <h2>Location Tracker Running...</h2>;
 }
 
 export default App;
